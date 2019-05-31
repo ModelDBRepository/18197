@@ -1,0 +1,108 @@
+Neural_Computation
+------------------
+
+Simmulations that illustrate the application of simple kinetic models
+for excitatory and inhibitory synaptic currents.  These simulations
+are related to the following paper:
+
+   Destexhe, A., Mainen, Z.F. and Sejnowski, T.J.  An efficient method for
+   computing synaptic conductances based on a kinetic model of receptor binding
+   Neural Computation 6: 10-14, 1994.  
+
+   (see postscript file synapse.ps.Z)
+
+   ( or pdf at http://cns.iaf.cnrs-gif.fr/abstracts/synapse.html )
+
+This directory contains all the files needed to run the simulations
+using the Interviews version of NEURON.  These files are commented and
+should run straighforwardly, provided the NEURON simulator is
+installed properly.
+
+
+
+The kinetic synapse mechanism
+-----------------------------
+
+This mechanisms has the following properties:
+
+1. It is based on a simple kinetic scheme of binding of transmitter on
+   postsynaptic receptors.  This description has the advantage that
+   it is fully compatible with the level of description used for other
+   mechanisms (Hodgkin-Huxley currents, calcium diffusion, etc).
+
+2. The mechanism gives EPSP's or IPSP's from a pulse of transmitter.
+   The waveform of these PSP's is very close to EPSP's or IPSP's measured 
+   experimentally, and the decay is monoexponential.  The user can set all
+   the parameters corresponding to the rising phase, decay, amplitude, etc...
+   (see .mod files)
+
+3. Summation of consecutive PSP's is handled automatically by the 
+   mechanism without need for an explicit event cue.  
+
+4. Each synapse has a state variable corresponding to the fraction of 
+   postsynaptic receptors in the open state.  However, the kinetics are
+   first order, and so can be solved exactly.  This has the important
+   advantage that it can be fit very easily to experimental recordings
+   (see J. Computational Neurosci. paper).
+
+5. Finally, this mechanism is very fast to compute. It does not require 
+   solving any differential equations; at any given time only one exponential
+   is calculated per synapse.  Thus, the mechanism is as fast to compute as 
+   optimized versions of alpha function-based models.
+
+
+
+How to run the simulation
+-------------------------
+
+This directory contains the files necessary to run a simulation such as
+illustrated in Fig.1 of the Neural Computation paper.
+
+To compile the demo, NEURON and INTERVIEWS must be installed and working on
+the machine you are using.  Just type "nrnivmodl" to compile the mechanisms
+given in the mod files (glutamate.mod and gaba.mod are the mechanisms
+for glutamate and gaba synapses, and HH.mod is the Hodgkin-Huxley kinetics). 
+
+Then, execute one of the two example files by typing:
+
+special demo_glutamate_neuralcomputation.oc -
+
+or
+
+special demo_gaba_neuralcomputation.oc - 
+
+Once the menu and graphics interface has appeared, click on "Init and Run"
+button to start the simulation...
+
+
+
+
+
+
+All these simulations were done using the NEURON simulator written by
+Michael Hines, and which is available freely on internet via anonymous
+ftp from neuron.neuro.duke.edu:/neuron.  For more information about how
+to get NEURON and how to install it, please refer to the following sites:
+  http://www.neuro.duke.edu/neuron/home.html
+  http://www.nnc.yale.edu/HTML/YALE/NNC/neuron/neuron.html
+
+
+
+
+
+For further information, please contact:
+
+Alain Destexhe
+The Salk Institute
+Computational Neurobiology Laboratory
+10010 North Torrey Pines Road
+La Jolla CA 92037, USA
+
+Department of Physiology
+Laval University
+Quebec G1K 7P4
+Canada
+
+http://www.cnl.salk.edu/~alain/
+email: alain@fmed.ulaval.ca
+
