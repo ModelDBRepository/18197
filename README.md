@@ -51,15 +51,15 @@ All these simulations were done using the NEURON simulator written by Michael Hi
 
 For further information, please contact:
 
-Alain Destexhe
-The Salk Institute
-Computational Neurobiology Laboratory
-10010 North Torrey Pines Road
+Alain Destexhe  
+The Salk Institute  
+Computational Neurobiology Laboratory  
+10010 North Torrey Pines Road  
 La Jolla CA 92037, USA
 
-Department of Physiology
-Laval University
-Quebec G1K 7P4
+Department of Physiology  
+Laval University  
+Quebec G1K 7P4  
 Canada
 
 [http://www.cnl.salk.edu/~alain/](http://www.cnl.salk.edu/~alain/)
